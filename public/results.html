@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Order Receipt</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        @media (min-width:330px){
+            .form{
+                display: flex;
+                flex-direction: column;
+            }
+            img{
+                width: 100%;
+            }
+            #results{
+                font-family: 'PT Sans', sans-serif;
+                font-size: 1rem;
+                font-weight: 400;
+                padding: 2em;
+                line-height: 200%;
+                word-spacing: 1em;
+                color: black
+
+            }
+            .goback{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                background-color: rgb(6, 142, 192);
+            }
+            a{
+                font-family: "Fredoka One", cursive;
+                background-color: white;
+                color: rgb(242, 101, 34);
+                font-size: 1rem;
+                padding: 1em;
+                margin: 1em;
+                border-radius: 5px;
+                text-decoration: none;
+            }
+        }
+        @media (min-width:768px){
+                #results{
+                font-size: 1.5rem;
+                }
+                a{
+                    font-size: 1.5rem;
+                    border-radius: 10px;
+                }
+        }
+                
+        @media (min-width:1000px){
+            .border{
+                border: 2px solid rgb(6, 142, 192);
+                width: 80vw;
+                margin: auto;
+            }
+            a{
+                    border-radius: 15px;
+                }
+        }
+                
+
+
+    </style>
+</head>
+<body>
+    <section class="border">
+    <div class="form" >
+        <img src="thankyou-page.png" alt="">
+        <div id="results"></div>
+    </div>
+
+    <div class="goback">
+    <a href="./action.html">ORDER AGAIN</a>
+    </div>
+    </section>
+    
+    <script>
+        const resultsList = document.getElementById('results')
+        new URLSearchParams(window.location.search).forEach((value,name) => {
+            resultsList.append(`${name}: ${value}`)
+            resultsList.append(document.createElement('br'))
+
+        })
+    </script>
+    
+</body>
+</html>
